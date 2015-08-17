@@ -1,0 +1,31 @@
+<div th:fragment="content">
+
+	<form action="#" th:action="@{/todo/update}" th:object="${todo}"
+		method="post">
+		<p>
+			<input type="hidden" th:field="*{id}" />
+		</p>
+		<p>
+			Name: <input type="text" th:field="*{name}" />
+		</p>
+		<p>
+			Description:
+			<textarea rows="3" cols="" th:field="*{desc}"></textarea>
+		</p>
+		<p>
+			<input type="hidden" th:field="*{done}" />
+		</p>
+		<p>
+			Due Date: <input type="date" th:field="*{dueDate}" />
+		</p>
+		<p>
+			<input type="submit" value="Update" />
+		</p>
+
+
+		<div class="alert alert-success" th:if="${message}">
+			<strong><p th:text="${message}"></p></strong>
+
+		</div>
+	</form>
+</div>
